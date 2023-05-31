@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <gradient
+        android:angle="0"
+        android:endColor="#7873F5"
+        android:startColor="#EC77AB"
+        android:type="linear" />
+</shape>
+
+    <!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--    <item android:drawable="@drawable/resolution" android:state_hovered="true" />-->
+    <!--    <item android:drawable="@drawable/res" />-->
+    <!--</selector>-->

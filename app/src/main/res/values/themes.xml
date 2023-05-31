@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Screen_Recorder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Screen_Recorder" parent="Base.Theme.Screen_Recorder" />
+
+    <style name="CustomNavTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </style>
+
+    <style name="CustomBottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="android:shape">rectangle</item>
+        <item name="android:bottomLeftRadius">80dp</item>
+        <item name="android:bottomRightRadius">80dp</item>
+        <item name="android:topLeftRadius">40dp</item>
+        <item name="android:topRightRadius">40dp</item>
+        <item name="android:startColor">#EC77AB</item>
+        <item name="android:endColor">#7873F5</item>
+        <item name="android:angle">0</item>
+    </style>
+</resources>
