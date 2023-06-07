@@ -2,8 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
+
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +25,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Screen_Recorder"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
+        <service
+            android:name=".ScreenRecordService"
+            android:foregroundServiceType="mediaProjection"
+            android:enabled="true"
+            android:exported="false"
+            tools:targetApi="q"/>
+
         <activity
             android:name=".FramesActivity"
             android:exported="false" />

@@ -1,21 +1,26 @@
 package com.example.screen_recorder
 
-import android.R
+import android.app.Activity
+import android.app.ActivityManager
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
+import android.media.projection.MediaProjectionManager
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.screen_recorder.databinding.ActivityMainMenuBinding
-import java.lang.NullPointerException
 
 
 class MainMenu : AppCompatActivity() {
+    private lateinit var mediaProjectionManager: MediaProjectionManager
     private lateinit var binding: ActivityMainMenuBinding
+    private val REQUEST_MEDIA_PROJECTION = 1
+    var isRecording = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
@@ -72,15 +77,56 @@ class MainMenu : AppCompatActivity() {
                     // Handle selection for menu item 1
                     true
                 }
+
                 com.example.screen_recorder.R.id.setting -> {
                     // Handle selection for menu item 2
                     replaceFragment(SettingsFragment())
                     true
                 }
+
                 else -> false
             }
         }
+
+        //Ask for permission to start recording (making instance)
+        mediaProjectionManager =
+            getSystemService(MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
+
+        binding.recordButton.setOnClickListener {
+            if (isRecording) {
+                isRecording = false
+                val stopIntent = Intent(this, ScreenRecordService::class.java)
+                stopIntent.action = "com.example.screen_recorder.STOP_RECORDING"
+                stopService(stopIntent)
+                binding.recordButton.setImageResource(R.drawable.union)
+            } else {
+                // Start the permission request
+                val permissionIntent = mediaProjectionManager.createScreenCaptureIntent()
+                startActivityForResult(
+                    permissionIntent,REQUEST_MEDIA_PROJECTION
+                )
+            }
+        }
+
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==REQUEST_MEDIA_PROJECTION){
+            if(resultCode== RESULT_OK){
+                //Permission granted, start the recording service now
+                val serviceIntent = Intent(this, ScreenRecordService::class.java)
+                serviceIntent.putExtra(ScreenRecordService.EXTRA_RESULT_CODE, resultCode)
+                serviceIntent.putExtra(ScreenRecordService.EXTRA_DATA, data)
+                startService(serviceIntent)
+                binding.recordButton.setImageResource(R.drawable.baseline_stop_24)
+                isRecording = true
+            } else {
+                Toast.makeText(this,"Permission denied",Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val transaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -88,6 +134,8 @@ class MainMenu : AppCompatActivity() {
         transaction.commit()
 
     }
+
+
 
     override fun onPause() {
         super.onPause()
