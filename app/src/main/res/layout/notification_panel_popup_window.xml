@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="298dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/record_icon"/>
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosans_regular"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:text="Allow notification panel ?"
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/notification_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosans_regular"
+            android:textColor="#2C2B2B"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:text="Allow notification control panel to appear to strengthen recording stability and ensure normal recording."/>
+        <TextView
+            android:id="@+id/allow_floating_btn"
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:background="@drawable/gradient_color"
+            android:text="Allow"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textFontWeight="600"
+            android:fontFamily="@font/notosans_regular"
+            android:letterSpacing="0.1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"/>
+        <LinearLayout
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:background="@drawable/gradient_color"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/aske_me_later_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textFontWeight="600"
+                android:fontFamily="@font/notosans_regular"
+                android:letterSpacing="0.1"
+                android:background="@drawable/btn_background"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="Don't allow"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/dont_ask_again_btn"
+            android:layout_width="107dp"
+            android:layout_height="17dp"
+            android:text="Don’t ask again"
+            android:textSize="12sp"
+            android:textFontWeight="600"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:buttonTint="#EC77AB"
+            android:fontFamily="@font/notosans_regular"
+            android:letterSpacing="0.1"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="98dp"
+            android:layout_marginLeft="98dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

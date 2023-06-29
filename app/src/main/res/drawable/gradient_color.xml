@@ -9,6 +9,7 @@
             android:endColor="#7873F5"
             android:startColor="#EC77AB"
             android:type="linear" />
+        <corners android:radius="10dp" />
     </shape>
 </item>
 </layer-list>

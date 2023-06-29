@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/stop/baseline_stop_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/emergency_recording/baseline_emergency_recording_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_stop_24" />
+                            <entry key="color" value="ce68bd" />
+                            <entry key="outputName" value="fab_record" />
+                            <entry key="sourceFile" value="D:\APPS_AiT" />
                           </map>
                         </option>
                       </PersistentState>

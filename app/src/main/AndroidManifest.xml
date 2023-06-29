@@ -27,12 +27,19 @@
         android:theme="@style/Theme.Screen_Recorder"
         android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
+
+<!--        <service android:name=".FloatingViewService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true" />-->
+
         <service
             android:name=".ScreenRecordService"
             android:foregroundServiceType="mediaProjection"
             android:enabled="true"
             android:exported="false"
             tools:targetApi="q"/>
+        <service
+            android:name=".FloatingControlService" />
 
         <activity
             android:name=".FramesActivity"

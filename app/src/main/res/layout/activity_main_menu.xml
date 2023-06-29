@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainMenu">
 
-
     <FrameLayout
         android:id="@+id/frameContainer"
         android:layout_width="match_parent"
@@ -142,6 +141,71 @@
         </LinearLayout>
 
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/blurLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/blurImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+    </FrameLayout>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/mainFab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:src="@drawable/fab_record"-->
+<!--        app:tint="@color/white" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginBottom="96dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:src="@drawable/fab_record"-->
+<!--        android:visibility="gone"-->
+<!--        app:tint="@color/white" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:layout_marginEnd="96dp"-->
+<!--        android:src="@drawable/fab_record"-->
+<!--        android:visibility="gone"-->
+<!--        app:tint="@color/white" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:src="@drawable/fab_record"-->
+<!--        android:visibility="gone"-->
+<!--        app:tint="@color/white" />-->
+
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
